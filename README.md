@@ -11,7 +11,7 @@ I set the 'beta' value to be 4 here for the beta-VAE (as my initial exploration 
 The choice of the dataset was because it was publicly available and easy to load (shown in the file titled "...2D..."). For visualizing the latent dimensions, I used a technique called t-SNE, which offers advantages over PCA w.r.t. visualization. The former can capture non-linear relationships in data and is better at revealing clusters, although it's less interpretable than the latter (which is OK as far as the purpose is solely visualization).  
 
 ## Final remarks for future work
-1. The neural network used here has linear layers. The choice of convolutional layers could be a better alternative. 
+1. The VAE here is constructed using a fully connected network or multilayer perceptron (MLP), with the layers consisting of linear transformations followed by ReLU non-linear activation functions. Instead of the MLP, the choice of convolutional layers could be a better alternative here, especially because we are dealing with image data. 
 2. We could also choose a more complex (or real-life) dataset.
 3. While Beta-VAEs can disentangle image data, they may not be good with text data. Hence, we could use other variants of VAEs for text-data.
 4. Note that disentanglement is about whether each latent variable encodes a single (generative) factor, whereas interpretability is actually about whether humans can understand and describe the (disentangled) factors. Hence, we need to see if there are separate evaluation metrics for disentanglement (already available) and interpretability. 
